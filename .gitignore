@@ -1,0 +1,35 @@
+# Power BI temp files
+*.pbix.tmp
+*.pbit.tmp
+~$*
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# IDE
+.vscode/
+*.swp
+*.swo
+
+# Agentes e configs locais (NÃO versionar)
+.agent/
+.agents/
+.gemini/
+
+# Databricks tokens e secrets (NUNCA versionar)
+.databrickscfg
+*.token
+*.secret
+
+# Test scripts temporários
+test_join_integrity.py
+test_databricks_volume.py
