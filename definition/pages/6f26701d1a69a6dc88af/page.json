@@ -1,0 +1,112 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "6f26701d1a69a6dc88af",
+  "displayName": "Página 1",
+  "displayOption": "FitToPage",
+  "height": 800,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "43fa3191de000d2a6493",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Ficha técnica (2)"
+              }
+            },
+            "Property": "Família Veículo"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "Ficha técnica (2)",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "f"
+                              }
+                            },
+                            "Property": "Família Veículo"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [{"Literal": {"Value": "'BOBCAT'"}}],
+                        [{"Literal": {"Value": "'CARRETA'"}}],
+                        [{"Literal": {"Value": "'CARRETA TK'"}}],
+                        [{"Literal": {"Value": "'CORINGA E MASTER'"}}],
+                        [{"Literal": {"Value": "'EMPILHADEIRA'"}}],
+                        [{"Literal": {"Value": "'ESCAVADEIRA'"}}],
+                        [{"Literal": {"Value": "'GERADOR'"}}],
+                        [{"Literal": {"Value": "'GERADOR GASOLINA'"}}],
+                        [{"Literal": {"Value": "'IMPLEMENTO'"}}],
+                        [{"Literal": {"Value": "'ONIBUS'"}}],
+                        [{"Literal": {"Value": "'QUADRICICLO'"}}],
+                        [{"Literal": {"Value": "'REBOQUE'"}}],
+                        [{"Literal": {"Value": "'RETROESCAVADEIRA'"}}],
+                        [{"Literal": {"Value": "'SEMI REBOQUE 3EIXOS'"}}],
+                        [{"Literal": {"Value": "'EQUIPAMENTO'"}}],
+                        [{"Literal": {"Value": "'MAQUINA'"}}],
+                        [{"Literal": {"Value": "'MOTONIVELADORA'"}}],
+                        [{"Literal": {"Value": "'SEMI REBOQUE'"}}],
+                        [{"Literal": {"Value": "'MICRO ONIBUS'"}}]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "353L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

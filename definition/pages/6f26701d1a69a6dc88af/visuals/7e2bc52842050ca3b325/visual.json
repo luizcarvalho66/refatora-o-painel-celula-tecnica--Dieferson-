@@ -1,0 +1,162 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "7e2bc52842050ca3b325",
+  "position": {
+    "x": 11.334598355471222,
+    "y": 14.573055028463,
+    "z": 1000,
+    "height": 113.34598355471221,
+    "width": 302.7956989247312,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Base clientes"
+                    }
+                  },
+                  "Property": "Grupo Econômico [ajustado relac.]"
+                }
+              },
+              "queryRef": "Base clientes.Grupo Econômico [ajustado relac.]",
+              "nativeQueryRef": "Nome cliente",
+              "active": true,
+              "displayName": "Nome cliente"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "selfFilter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "b",
+                    "Entity": "Base clientes",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Contains": {
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "b"
+                              }
+                            },
+                            "Property": "Grupo Econômico [ajustado relac.]"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'jbs'"
+                          }
+                        }
+                      }
+                    },
+                    "Annotations": {
+                      "PowerBI.MParameterBehavior": 1
+                    }
+                  }
+                ]
+              }
+            },
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "b",
+                    "Entity": "Base clientes",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "b"
+                                }
+                              },
+                              "Property": "Grupo Econômico [ajustado relac.]"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'JBS'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

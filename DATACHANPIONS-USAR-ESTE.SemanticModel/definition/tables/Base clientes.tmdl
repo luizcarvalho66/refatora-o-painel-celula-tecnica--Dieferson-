@@ -1,0 +1,79 @@
+table 'Base clientes'
+	lineageTag: 19cd22bf-ec7e-42a7-a8fc-7a7f39f6107c
+
+	column 'Cód. Cliente'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e1e5b54-49d3-460f-bf49-bedb93becb62
+		summarizeBy: none
+		sourceColumn: Cód. Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Razão Social'
+		dataType: string
+		lineageTag: 42ec43ec-ab6e-49e9-bede-d7b32e59bb91
+		summarizeBy: none
+		sourceColumn: Razão Social
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Grupo Econômico SF'
+		dataType: string
+		lineageTag: 69667b79-eb5f-4429-81a4-94e1e62f7123
+		summarizeBy: none
+		sourceColumn: Grupo Econômico SF
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Grupo Econômico [ajustado relac.]'
+		dataType: string
+		lineageTag: a47aa730-ee14-4823-b32f-7182e863ca3c
+		summarizeBy: none
+		sourceColumn: Grupo Econômico [ajustado relac.]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Produto [ORIG]'
+		dataType: string
+		lineageTag: 09ff3351-3ed9-4da9-ad3a-a2c536cd20fd
+		summarizeBy: none
+		sourceColumn: Produto [ORIG]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Produto [GER]'
+		dataType: string
+		lineageTag: 0fb75e48-a249-4006-8647-712313766125
+		summarizeBy: none
+		sourceColumn: Produto [GER]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Canal
+		dataType: string
+		lineageTag: f61a150f-979e-47eb-939c-77ba3ba377cb
+		summarizeBy: none
+		sourceColumn: Canal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Base clientes' = m
+		mode: import
+		source =
+				let
+				    Fonte = Databricks.Catalogs("adb-7941093640821140.0.azuredatabricks.net", "/sql/1.0/warehouses/ce56ec5f5d0a3e07"),
+				    hive_metastore = Fonte{[Name="hive_metastore"]}[Data],
+				    fcp_dev = hive_metastore{[Name="fcp_dev"]}[Data],
+				    view_data = fcp_dev{[Name="pbi_dim_clientes_unicos"]}[Data],
+				    Added1 = Table.AddColumn(view_data, "Produto [ORIG]", each "", type text),
+				    Added2 = Table.AddColumn(Added1, "Produto [GER]", each "", type text),
+				    Added3 = Table.AddColumn(Added2, "Canal", each "", type text),
+				    Renamed = Table.RenameColumns(Added3, {{"NameCustomer", "Razão Social"}, {"SourceNumber_Customer", "Cód. Cliente"}, {"EconomicGroupName", "Grupo Econômico SF"}, {"CommercialGroupName", "Grupo Econômico [ajustado relac.]"}}),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Renamed, {{"Cód. Cliente", Int64.Type}, {"Razão Social", type text}, {"Grupo Econômico SF", type text}, {"Grupo Econômico [ajustado relac.]", type text}, {"Produto [ORIG]", type text}, {"Produto [GER]", type text}, {"Canal", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table

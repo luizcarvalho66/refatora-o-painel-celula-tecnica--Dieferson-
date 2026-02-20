@@ -1,0 +1,177 @@
+table 'Ficha técnica (2)'
+	lineageTag: d334b63a-a69c-4f68-afb1-0ea2c93dad5c
+
+	measure _contador_S =
+			
+			DIVIDE(
+			    COUNTROWS(FILTER('Ficha técnica (2)', 'Ficha técnica (2)'[possui_FT] = "Sim")),
+			    COUNTROWS('Ficha técnica (2)'),
+			    0  // Retorna 0 se o denominador for zero
+			)
+		lineageTag: 604883b2-dc33-4cae-950c-cad51ba13b83
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure _Soma_va_com_ft = ```
+			
+			CALCULATE(
+			    SUM('Ficha técnica (2)'[Valor Aprovado]),
+			    'Ficha técnica (2)'[possui_FT]= "Sim"
+			)
+			
+			```
+		lineageTag: 53bb260f-0798-4d68-8ace-1b5c6fe221b3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure _Soma_va_sem_ft = ```
+			
+			CALCULATE(
+			    SUM('Ficha técnica (2)'[Valor Aprovado]),
+			    'Ficha técnica (2)'[possui_FT]= "Não"
+			)
+			
+			```
+		lineageTag: 005e3406-16fa-4f8d-acad-fd111a0dce4b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure %_aderencia_FT =
+			
+			[_Soma_va_com_ft]/([_Soma_va_com_ft]+[_Soma_va_sem_ft])
+		lineageTag: 149ae104-8a99-4662-98b7-a79dc440fe2b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cód. Veículo Modelo Manutenção'
+		dataType: int64
+		formatString: 0
+		lineageTag: ba0693bd-78e7-40db-8811-38b25ed50f7a
+		summarizeBy: sum
+		sourceColumn: Cód. Veículo Modelo Manutenção
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Possui Ficha Técnica?'
+		dataType: string
+		lineageTag: ed6ddd05-dfe3-4327-8118-d691124fd4b4
+		summarizeBy: none
+		sourceColumn: Possui Ficha Técnica?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Possui Ficha Técnica Novo Modelo?'
+		dataType: string
+		lineageTag: f00efec8-8adf-4a95-bf47-de460bddf82f
+		summarizeBy: none
+		sourceColumn: Possui Ficha Técnica Novo Modelo?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor Aprovado'
+		dataType: double
+		lineageTag: b8b3f96d-53d1-4811-80c8-ebbc7d9ce462
+		summarizeBy: sum
+		sourceColumn: Valor Aprovado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Código Cliente'
+		dataType: int64
+		formatString: 0
+		lineageTag: f751a052-d956-41da-96db-5509cc0ee0cf
+		summarizeBy: none
+		sourceColumn: Código Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Placa
+		dataType: string
+		lineageTag: 12a68535-5ec0-48f6-ae85-1c09fe4b309c
+		summarizeBy: none
+		sourceColumn: Placa
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Família Veículo'
+		dataType: string
+		lineageTag: 98ea2ae9-f044-4bbf-9634-243d37245972
+		summarizeBy: none
+		sourceColumn: Família Veículo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Família Segmento'
+		dataType: string
+		lineageTag: 78c58483-8c28-45b4-99f4-8418bada83ff
+		summarizeBy: none
+		sourceColumn: Família Segmento
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data Transação'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d0342d8c-e8ad-47cd-b3ac-f44f3862256a
+		summarizeBy: none
+		sourceColumn: Data Transação
+
+		variation Variation
+			isDefault
+			relationship: 3f07d9e2-ff0d-4838-8735-4fc8a5eda4f7
+			defaultHierarchy: LocalDateTable_eabfcf91-16b7-4e1b-82fe-dd025761f113.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome Cliente'
+		dataType: string
+		lineageTag: a55579cd-de2f-436c-ba16-438affeccbb8
+		summarizeBy: none
+		sourceColumn: Nome Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column possui_FT =
+			
+			SWITCH(
+			    TRUE(),
+			    'Ficha técnica (2)'[Possui Ficha Técnica Novo Modelo?] = "S" && 'Ficha técnica (2)'[Possui Ficha Técnica?] = "S", "Sim",
+			    'Ficha técnica (2)'[Possui Ficha Técnica Novo Modelo?] = "N" && 'Ficha técnica (2)'[Possui Ficha Técnica?] = "S", "Sim",
+			    'Ficha técnica (2)'[Possui Ficha Técnica Novo Modelo?] = "S" && 'Ficha técnica (2)'[Possui Ficha Técnica?] = "N", "Sim",
+			    'Ficha técnica (2)'[Possui Ficha Técnica Novo Modelo?] = "N" && 'Ficha técnica (2)'[Possui Ficha Técnica?] = "N", "Não",
+			    BLANK()  // Valor padrão se nenhuma condição for atendida
+			)
+		lineageTag: ba9782bd-ad3b-4294-98ca-7e2b76a49044
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Ficha técnica (2)' = m
+		mode: import
+		source =
+				let
+				    Fonte = Databricks.Catalogs("adb-7941093640821140.0.azuredatabricks.net", "/sql/1.0/warehouses/ce56ec5f5d0a3e07"),
+				    hive_metastore = Fonte{[Name="hive_metastore"]}[Data],
+				    fcp_dev = hive_metastore{[Name="fcp_dev"]}[Data],
+				    view_data = fcp_dev{[Name="pbi_fact_aderencia_ft_90d"]}[Data],
+				    Renamed = Table.RenameColumns(view_data, {
+				        {"MaintenanceVehicleModelId", "Cód. Veículo Modelo Manutenção"},
+				        {"Fl_Fatura_Cliente", "Possui Ficha Técnica?"},
+				        {"Fl_Fatura_Estabelecimento", "Possui Ficha Técnica Novo Modelo?"},
+				        {"ItemApprovedAmount", "Valor Aprovado"},
+				        {"SourceNumber_Customer", "Código Cliente"},
+				        {"VehiclePlate", "Placa"},
+				        {"VehicleFamilyName", "Família Veículo"},
+				        {"SegmentFamily", "Família Segmento"},
+				        {"TransactionDate", "Data Transação"},
+				        {"NameCustomer", "Nome Cliente"}
+				    }),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Renamed, {{"Cód. Veículo Modelo Manutenção", Int64.Type}, {"Possui Ficha Técnica?", type text}, {"Possui Ficha Técnica Novo Modelo?", type text}, {"Valor Aprovado", type number}, {"Código Cliente", Int64.Type}, {"Placa", type text}, {"Família Veículo", type text}, {"Família Segmento", type text}, {"Data Transação", type datetime}, {"Nome Cliente", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação

@@ -1,0 +1,134 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "c9695e91119032e09e6b",
+  "position": {
+    "x": 960.202403542062,
+    "y": 12.953826691967111,
+    "z": 3000,
+    "height": 114.9652118912081,
+    "width": 301.1764705882353,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ficha técnica (2)"
+                    }
+                  },
+                  "Property": "%_aderencia_FT"
+                }
+              },
+              "queryRef": "Ficha técnica (2).%_aderencia_FT",
+              "nativeQueryRef": "Cobertura FT/VA",
+              "displayName": "Cobertura FT/VA",
+              "format": "0.00%;-0.00%;0.00%"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Ficha técnica (2)"
+                  }
+                },
+                "Property": "%_aderencia_FT"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e98b2a53d9463f62e480",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Ficha técnica (2)"
+                  }
+                },
+                "Property": "_contador_S"
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Ficha técnica (2)"
+                      }
+                    },
+                    "Property": "_contador_S"
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      }
+    ]
+  }
+}

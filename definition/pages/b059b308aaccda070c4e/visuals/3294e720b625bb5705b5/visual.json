@@ -1,0 +1,298 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "3294e720b625bb5705b5",
+  "position": {
+    "x": 15.867896661097793,
+    "y": 154.71199244570349,
+    "z": 0,
+    "height": 406.61485194063096,
+    "width": 1017.528873392896,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ficha técnica (2)"
+                    }
+                  },
+                  "Property": "Família Veículo"
+                }
+              },
+              "queryRef": "Ficha técnica (2).Família Veículo",
+              "nativeQueryRef": "Família Veículo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ficha técnica (2)"
+                    }
+                  },
+                  "Property": "Cód. Veículo Modelo Manutenção"
+                }
+              },
+              "queryRef": "Sum(Ficha técnica (2).Cód. Veículo Modelo Manutenção)",
+              "nativeQueryRef": "Cód. modelo veiculo",
+              "displayName": "Cód. modelo veiculo"
+            },
+            {
+              "field": {
+                "Arithmetic": {
+                  "Left": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Ficha técnica (2)"
+                            }
+                          },
+                          "Property": "Valor Aprovado"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "Right": {
+                    "ScopedEval": {
+                      "Expression": {
+                        "Aggregation": {
+                          "Expression": {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Ficha técnica (2)"
+                                }
+                              },
+                              "Property": "Valor Aprovado"
+                            }
+                          },
+                          "Function": 0
+                        }
+                      },
+                      "Scope": []
+                    }
+                  },
+                  "Operator": 3
+                }
+              },
+              "queryRef": "Sum(Ficha técnica (2).Valor Aprovado)",
+              "nativeQueryRef": "%GT Soma de Valor Aprovado",
+              "displayName": "VA",
+              "format": "0.00%;-0.00%;0.00%"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Arithmetic": {
+                "Left": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Ficha técnica (2)"
+                          }
+                        },
+                        "Property": "Valor Aprovado"
+                      }
+                    },
+                    "Function": 0
+                  }
+                },
+                "Right": {
+                  "ScopedEval": {
+                    "Expression": {
+                      "Aggregation": {
+                        "Expression": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Ficha técnica (2)"
+                              }
+                            },
+                            "Property": "Valor Aprovado"
+                          }
+                        },
+                        "Function": 0
+                      }
+                    },
+                    "Scope": []
+                  }
+                },
+                "Operator": 3
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "290.2001317985803D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Ficha técnica (2).Valor Aprovado)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "336.35458601067626D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Ficha técnica (2).Família Veículo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "366.18355231931685D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Ficha técnica (2).Cód. Veículo Modelo Manutenção)"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Modelos para cadastrar FT'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "93477d406c77ee8e32c8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Ficha técnica (2)"
+              }
+            },
+            "Property": "possui_FT"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "Ficha técnica (2)",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "f"
+                          }
+                        },
+                        "Property": "possui_FT"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Não'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

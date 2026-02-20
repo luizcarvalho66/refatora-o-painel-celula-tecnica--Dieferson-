@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "DATACHANPIONS-USAR-ESTE"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0e7aeb3f-2370-47a3-a4e9-d84c53dc1c37"
+  }
+}

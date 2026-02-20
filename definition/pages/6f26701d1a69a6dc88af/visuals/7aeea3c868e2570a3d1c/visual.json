@@ -1,0 +1,149 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "7aeea3c868e2570a3d1c",
+  "position": {
+    "x": 541.49197355996216,
+    "y": 142.87657626645156,
+    "z": 4000,
+    "height": 283.63865281712305,
+    "width": 718.0223239146751,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ficha técnica (2)"
+                    }
+                  },
+                  "Property": "Nome Cliente"
+                }
+              },
+              "queryRef": "Ficha técnica (2).Nome Cliente",
+              "nativeQueryRef": "Nome Cliente"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Ficha técnica (2)"
+                        }
+                      },
+                      "Property": "Valor Aprovado"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Ficha técnica (2).Valor Aprovado)",
+              "nativeQueryRef": "VA",
+              "displayName": "VA",
+              "format": "\"R$\" #,0.###############;-\"R$\" #,0.###############;\"R$\" #,0.###############"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ficha técnica (2)"
+                    }
+                  },
+                  "Property": "_contador_S"
+                }
+              },
+              "queryRef": "Ficha técnica (2)._contador_S",
+              "nativeQueryRef": "Cobertura ",
+              "displayName": "Cobertura ",
+              "format": "0.00%;-0.00%;0.00%"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Ficha técnica (2)"
+                      }
+                    },
+                    "Property": "Valor Aprovado"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "Sum(Ficha técnica (2).Valor Aprovado)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "409.71016877398773D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Ficha técnica (2).Nome Cliente"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
