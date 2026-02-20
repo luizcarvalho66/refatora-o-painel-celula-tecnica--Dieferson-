@@ -1,0 +1,8 @@
+relationship 3f07d9e2-ff0d-4838-8735-4fc8a5eda4f7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Ficha técnica (2)'.'Data Transação'
+	toColumn: LocalDateTable_eabfcf91-16b7-4e1b-82fe-dd025761f113.Date
+
+relationship 22c5df33-5893-4438-753d-5a265f0fdeb6
+	fromColumn: 'Ficha técnica (2)'.'Código Cliente'
+	toColumn: 'Base clientes'.'Cód. Cliente'
