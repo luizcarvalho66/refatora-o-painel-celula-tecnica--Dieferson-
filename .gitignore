@@ -4,6 +4,11 @@
 ~$*
 *.log
 
+# Power BI local settings e cache (NÃO versionar)
+.pbi/
+**/.pbi/
+*.abf
+
 # Python
 __pycache__/
 *.pyc
