@@ -2,8 +2,94 @@ cultureInfo pt-BR
 
 	linguisticMetadata =
 			{
-			  "Version": "1.0.0",
-			  "Language": "en-US"
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "ficha_técnica_2.column_contador_s": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Ficha técnica (2)",
+			          "ConceptualProperty": "_contador_S"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cobertura": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ficha_técnica_2.column_aderencia_ft": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Ficha técnica (2)",
+			          "ConceptualProperty": "%_aderencia_FT"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cobertura FT/VA": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ficha_técnica_2.cód__veículo_modelo_manutenção": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Ficha técnica (2)",
+			          "ConceptualProperty": "Cód. Veículo Modelo Manutenção"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cód. modelo veiculo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "base_clientes.grupo_econômico_ajustado_relac_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Base clientes",
+			          "ConceptualProperty": "Grupo Econômico [ajustado relac.]"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Nome cliente": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
 			}
 		contentType: json
 

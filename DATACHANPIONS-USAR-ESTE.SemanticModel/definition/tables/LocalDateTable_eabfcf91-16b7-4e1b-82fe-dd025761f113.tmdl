@@ -108,3 +108,4 @@ table LocalDateTable_eabfcf91-16b7-4e1b-82fe-dd025761f113
 		source = Calendar(Date(Year(MIN('Ficha técnica (2)'[Data Transação])), 1, 1), Date(Year(MAX('Ficha técnica (2)'[Data Transação])), 12, 31))
 
 	annotation __PBI_LocalDateTable = true
+

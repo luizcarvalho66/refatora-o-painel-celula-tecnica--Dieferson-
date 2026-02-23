@@ -1,0 +1,59 @@
+=== 1. dim_maintenancevehicles: Amostra para customer 60905 (primeiras colunas relevantes) ===
+  Colunas: ['MaintenanceVehicleModelId', 'VehicleFamilyName', 'MaintenanceModelFamily', 'MaintenanceVehicleModel', 'MaintenanceVehicleVersion', 'MaintenanceVehicleEngineSpec', 'VehicleSourceCode', 'CustomerId']
+  [None, None, None, None, None, None, 1900816, 60905]
+  [None, None, None, None, None, None, 1901054, 60905]
+  [None, None, None, None, None, None, 1901209, 60905]
+  [None, None, None, None, None, None, 1901362, 60905]
+  [None, None, None, None, None, None, 1901572, 60905]
+
+=== 2. Veículos do customer 60905: com vs sem MaintenanceVehicleModelId ===
+  Sem ModelId: 4437
+  Tem ModelId: 6587
+
+=== 3. FACT JAN/2026: Distribuição flags para 60905 ===
+  Fl_Cli=S | Fl_Est=S | Qtd=17254 | VA=R$ 9,906,631.71
+  Fl_Cli=S | Fl_Est=P | Qtd=10 | VA=R$ 1,182.65
+
+=== 4. TODAS colunas fact_transaction_maintenance ===
+  - IdTransaction_Maintenance
+  - IdTransaction_TransactionItem
+  - IdTransactionItem
+  - IdService
+  - IdTransaction
+  - IdMerchant
+  - IdCustomer
+  - IdProduct
+  - IdTransactionStatus
+  - IdTransactionOrganization
+  - IdTransactionOperationGroup
+  - IdPaymentMachine
+  - IdDriver
+  - IdVehicle
+  - TransactionDate
+  - Fl_Fatura_Cliente
+  - Fl_Fatura_Estabelecimento
+  - TransactionHour
+  - TransactionCancellationDate
+  - TransactionCancellationHour
+  - PostingDate
+  - PostingHour
+  - SourceNumber
+  - AdditionalSourceNumber
+  - ItemQuantity
+  - ItemOrderAmount
+  - ItemApprovedAmount
+  - Mileage
+  - PreviousMileage
+  - KilometersDriven
+  - kilometerPerLiter
+  - TransactionUnitaryValue
+  - InterchangeAmount
+  - ValueTPE
+  - Description_Serie_POS
+  - IdProductExpers
+  - IdProductHomeBase
+  - CreatedDate
+
+=== 5. FACT JAN/2026 customer 60905: Transações COM vs SEM MaintenanceVehicleModelId ===
+  Sem FT: Qtd=250 | VA=R$ 77,239.11
+  Tem FT: Qtd=17014 | VA=R$ 9,830,575.25

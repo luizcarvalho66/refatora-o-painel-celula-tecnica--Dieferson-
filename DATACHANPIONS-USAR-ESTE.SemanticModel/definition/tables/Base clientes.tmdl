@@ -77,3 +77,4 @@ table 'Base clientes'
 	annotation PBI_NavigationStepName = Navegação
 
 	annotation PBI_ResultType = Table
+

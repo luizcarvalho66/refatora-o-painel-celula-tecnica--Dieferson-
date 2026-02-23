@@ -1,0 +1,39 @@
+=== VIEW: pbi_dim_clientes_unicos ===
+CREATE VIEW fcp_dev.pbi_dim_clientes_unicos (
+  SourceNumber_Customer,
+  NameCustomer,
+  EconomicGroupName,
+  CommercialGroupName)
+COMMENT 'Power BI: Base Clientes | Clientes unicos (GROUP BY) + Grupo Economico | Chave PK para 1:N'
+TBLPROPERTIES (
+  'transient_lastDdlTime' = '1771536624')
+WITH SCHEMA COMPENSATION
+AS SELECT
+    CAST(m.SourceNumber_Customer AS INT) AS SourceNumber_Customer, m.NameCustomer,
+    c.EconomicGroupName, c.CommercialGroupName
+FROM (SELECT SourceNumber_Customer, MAX(NameCustomer) AS NameCustomer FROM hive_metastore.gold.dim_maintenance WHERE SourceNumber_Customer IS NOT NULL GROUP BY SourceNumber_Customer) m
+LEFT JOIN (SELECT CustomerLegalName, MAX(EconomicGroupName) AS EconomicGroupName, MAX(CommercialGroupName) AS CommercialGroupName FROM hive_metastore.gold.dim_customers WHERE CustomerLegalName IS NOT NULL GROUP BY CustomerLegalName) c ON m.NameCustomer = c.CustomerLegalName
+LIMIT 5000000
+
+
+=== VIEW: pbi_fact_aderencia_ft_90d ===
+CREATE VIEW fcp_dev.pbi_fact_aderencia_ft_90d (
+  MaintenanceVehicleModelId,
+  Fl_Fatura_Cliente,
+  Fl_Fatura_Estabelecimento,
+  ItemApprovedAmount,
+  SourceNumber_Customer,
+  VehiclePlate,
+  VehicleFamilyName COMMENT 'Vehicle\'s family name.
+',
+  SegmentFamily COMMENT 'Code about family of vehicles registered by Fuel sector.
+',
+  TransactionDate,
+  NameCustomer)
+COMMENT 'Power BI: Ficha Tecnica Cobertura | fact_transaction + dim_maintenance + dim_vehicles | Filtros: flags S/N, 150 dias (CURRENT_DATE), LIMIT 15M | Owner: luiz.carvalho@edenred.com'
+TBLPROPERTIES (
+  'transient_lastDdlTime' = '1771597704')
+WITH SCHEMA COMPENSATION
+AS SELECT CAST(v.MaintenanceVehicleModelId AS INT) AS MaintenanceVehicleModelId, ft.Fl_Fatura_Cliente, ft.Fl_Fatura_Estabelecimento, CAST(ft.ItemApprovedAmount AS DOUBLE) AS ItemApprovedAmount, CAST(m.SourceNumber_Customer AS INT) AS SourceNumber_Customer, m.VehiclePlate, v.VehicleFamilyName, v.SegmentFamily, CAST(ft.TransactionDate AS TIMESTAMP) AS TransactionDate, m.NameCustomer FROM hive_metastore.gold.fact_transaction_maintenance ft LEFT JOIN hive_metastore.gold.dim_maintenance m ON ft.SourceNumber = m.SourceNumber_Transaction LEFT JOIN hive_metastore.gold.dim_maintenancevehicles v ON m.SourceNumber_Vehicle = v.VehicleSourceCode WHERE ft.Fl_Fatura_Cliente IN ('S','N') AND ft.Fl_Fatura_Estabelecimento IN ('S','N') AND ft.TransactionDate >= DATE_ADD(CURRENT_DATE(), -150) LIMIT 15000000
+
+
