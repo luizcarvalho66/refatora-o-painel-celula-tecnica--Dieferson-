@@ -35,6 +35,10 @@ desktop.ini
 *.token
 *.secret
 
-# Test scripts temporários
-test_join_integrity.py
-test_databricks_volume.py
+# Scripts temporários e outputs de debug (NÃO versionar)
+*.txt
+debug_*.py
+explore_*.py
+test_*.py
+get_view_definitions.py
+update_databricks_views.py
