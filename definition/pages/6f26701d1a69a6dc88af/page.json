@@ -48,25 +48,139 @@
                         }
                       ],
                       "Values": [
-                        [{"Literal": {"Value": "'BOBCAT'"}}],
-                        [{"Literal": {"Value": "'CARRETA'"}}],
-                        [{"Literal": {"Value": "'CARRETA TK'"}}],
-                        [{"Literal": {"Value": "'CORINGA E MASTER'"}}],
-                        [{"Literal": {"Value": "'EMPILHADEIRA'"}}],
-                        [{"Literal": {"Value": "'ESCAVADEIRA'"}}],
-                        [{"Literal": {"Value": "'GERADOR'"}}],
-                        [{"Literal": {"Value": "'GERADOR GASOLINA'"}}],
-                        [{"Literal": {"Value": "'IMPLEMENTO'"}}],
-                        [{"Literal": {"Value": "'ONIBUS'"}}],
-                        [{"Literal": {"Value": "'QUADRICICLO'"}}],
-                        [{"Literal": {"Value": "'REBOQUE'"}}],
-                        [{"Literal": {"Value": "'RETROESCAVADEIRA'"}}],
-                        [{"Literal": {"Value": "'SEMI REBOQUE 3EIXOS'"}}],
-                        [{"Literal": {"Value": "'EQUIPAMENTO'"}}],
-                        [{"Literal": {"Value": "'MAQUINA'"}}],
-                        [{"Literal": {"Value": "'MOTONIVELADORA'"}}],
-                        [{"Literal": {"Value": "'SEMI REBOQUE'"}}],
-                        [{"Literal": {"Value": "'MICRO ONIBUS'"}}]
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'BOBCAT'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'CARRETA'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'CARRETA TK'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'CORINGA E MASTER'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'EMPILHADEIRA'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'ESCAVADEIRA'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'GERADOR'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'GERADOR GASOLINA'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'IMPLEMENTO'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'ONIBUS'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'QUADRICICLO'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'REBOQUE'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'RETROESCAVADEIRA'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'SEMI REBOQUE 3EIXOS'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'EQUIPAMENTO'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'MAQUINA'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'MOTONIVELADORA'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'SEMI REBOQUE'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'MICRO ONIBUS'"
+                            }
+                          }
+                        ]
                       ]
                     }
                   }

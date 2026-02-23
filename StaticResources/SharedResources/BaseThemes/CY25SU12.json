@@ -1,84 +1,56 @@
 {
   "name": "CY25SU12",
   "dataColors": [
-    "#118DFF",
-    "#12239E",
-    "#E66C37",
-    "#6B007B",
-    "#E044A7",
-    "#744EC2",
-    "#D9B300",
-    "#D64550",
-    "#197278",
-    "#1AAB40",
-    "#15C6F4",
-    "#4092FF",
-    "#FFA058",
-    "#BE5DC9",
-    "#F472D0",
-    "#B5A1FF",
-    "#C4A200",
-    "#FF8080",
-    "#00DBBC",
-    "#5BD667",
-    "#0091D5",
-    "#4668C5",
-    "#FF6300",
-    "#99008A",
-    "#EC008C",
-    "#533285",
-    "#99700A",
-    "#FF4141",
-    "#1F9A85",
-    "#25891C",
-    "#0057A2",
-    "#002050",
-    "#C94F0F",
-    "#450F54",
-    "#B60064",
-    "#34124F",
-    "#6A5A29",
-    "#1AAB40",
-    "#BA141A",
-    "#0C3D37",
-    "#0B511F"
+    "#F72717",
+    "#0D8AFF",
+    "#00A184",
+    "#711CFF",
+    "#FF5978",
+    "#81C105",
+    "#6D7787",
+    "#FED0C8",
+    "#B0EFFF",
+    "#98F6DB",
+    "#C8C3FF",
+    "#DCF691",
+    "#D5D8DD"
   ],
-  "foreground": "#252423",
-  "foregroundNeutralSecondary": "#605E5C",
-  "foregroundNeutralTertiary": "#B3B0AD",
+  "foreground": "#000000",
+  "foregroundNeutralSecondary": "#6D7787",
+  "foregroundNeutralTertiary": "#D5D8DD",
   "background": "#FFFFFF",
-  "backgroundLight": "#F3F2F1",
-  "backgroundNeutral": "#C8C6C4",
-  "tableAccent": "#118DFF",
-  "good": "#1AAB40",
-  "neutral": "#D9B300",
-  "bad": "#D64554",
-  "maximum": "#118DFF",
-  "center": "#D9B300",
-  "minimum": "#DEEFFF",
+  "backgroundLight": "#F5F5F5",
+  "backgroundNeutral": "#D5D8DD",
+  "tableAccent": "#F72717",
+  "good": "#00A184",
+  "neutral": "#81C105",
+  "bad": "#F72717",
+  "maximum": "#0D8AFF",
+  "center": "#81C105",
+  "minimum": "#B0EFFF",
   "null": "#FF7F48",
   "hyperlink": "#0078d4",
   "visitedHyperlink": "#0078d4",
   "textClasses": {
     "callout": {
       "fontSize": 24,
-      "fontFace": "DIN",
-      "color": "#252423"
+      "fontFace": "Calibri",
+      "color": "#000000"
     },
     "title": {
       "fontSize": 12,
-      "fontFace": "DIN",
-      "color": "#252423"
+      "fontFace": "Calibri",
+      "color": "#000000"
     },
     "header": {
       "fontSize": 12,
-      "fontFace": "Segoe UI Semibold",
-      "color": "#252423"
+      "fontFace": "Calibri",
+      "color": "#000000"
     },
     "label": {
       "fontSize": 10,
-      "fontFace": "Segoe UI",
-      "color": "#252423"
+      "fontFace": "Calibri",
+      "color": "#000000"
     }
   },
   "visualStyles": {
@@ -146,6 +118,22 @@
         "border": [
           {
             "width": 1
+          }
+        ],
+        "borderRadius": [
+          {
+            "radius": 8
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#000000"
+              }
+            },
+            "transparency": 70
           }
         ],
         "outspacePane": [
@@ -392,7 +380,7 @@
         "referenceLabelValue": [
           {
             "$id": "default",
-            "valueFontFamily": "'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+            "valueFontFamily": "Calibri, helvetica, arial, sans-serif",
             "fontColor": {
               "solid": {
                 "color": "foreground"
@@ -403,7 +391,7 @@
         "value": [
           {
             "$id": "default",
-            "fontFamily": "'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif"
+            "fontFamily": "Calibri, helvetica, arial, sans-serif"
           }
         ],
         "label": [
@@ -530,7 +518,7 @@
         "value": [
           {
             "$id": "default",
-            "fontFamily": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+            "fontFamily": "'Calibri', helvetica, arial, sans-serif"
           }
         ]
       }

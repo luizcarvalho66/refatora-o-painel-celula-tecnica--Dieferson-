@@ -134,16 +134,23 @@ table 'Ficha técnica (2)'
 		annotation SummarizationSetBy = Automatic
 
 	column possui_FT =
-			
-			SWITCH(
-			    TRUE(),
-			    'Ficha técnica (2)'[Possui Ficha Técnica Novo Modelo?] = "S" && 'Ficha técnica (2)'[Possui Ficha Técnica?] = "S", "Sim",
-			    'Ficha técnica (2)'[Possui Ficha Técnica Novo Modelo?] = "N" && 'Ficha técnica (2)'[Possui Ficha Técnica?] = "S", "Sim",
-			    'Ficha técnica (2)'[Possui Ficha Técnica Novo Modelo?] = "S" && 'Ficha técnica (2)'[Possui Ficha Técnica?] = "N", "Sim",
-			    'Ficha técnica (2)'[Possui Ficha Técnica Novo Modelo?] = "N" && 'Ficha técnica (2)'[Possui Ficha Técnica?] = "N", "Não",
-			    BLANK()  // Valor padrão se nenhuma condição for atendida
+			IF(
+			    'Ficha técnica (2)'[Cód. Veículo Modelo Manutenção] <> 0 && NOT(ISBLANK('Ficha técnica (2)'[Cód. Veículo Modelo Manutenção])),
+			    "Sim",
+			    "Não"
 			)
 		lineageTag: ba9782bd-ad3b-4294-98ca-7e2b76a49044
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Ficha Técnica Detalhado' = 
+			IF(
+			    'Ficha técnica (2)'[Cód. Veículo Modelo Manutenção] <> 0 && NOT(ISBLANK('Ficha técnica (2)'[Cód. Veículo Modelo Manutenção])),
+			    "Com Ficha Técnica",
+			    "Sem Ficha Técnica"
+			)
+		lineageTag: a7698ac3-31ac-4696-a831-285b0d00f7aa
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
@@ -175,3 +182,4 @@ table 'Ficha técnica (2)'
 	annotation PBI_ResultType = Table
 
 	annotation PBI_NavigationStepName = Navegação
+
