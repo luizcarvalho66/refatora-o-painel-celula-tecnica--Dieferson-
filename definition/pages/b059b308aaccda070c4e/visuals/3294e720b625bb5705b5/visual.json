@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "3294e720b625bb5705b5",
   "position": {
-    "x": 15.867896661097793,
-    "y": 154.71199244570349,
+    "x": 15.463411564839866,
+    "y": 0,
     "z": 0,
-    "height": 406.61485194063096,
-    "width": 1017.528873392896,
+    "height": 719.04863776505385,
+    "width": 1265.4225130560624,
     "tabOrder": 0
   },
   "visual": {
@@ -210,6 +210,36 @@
                   "Value": "true"
                 }
               }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "8L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {}
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "80L"
+                }
+              }
             }
           }
         }
@@ -292,6 +322,78 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "495e4a36e3ba0cc2067c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Ficha técnica (2)"
+              }
+            },
+            "Property": "Família Veículo"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2a7dadce712e7e1f44b9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Ficha técnica (2)"
+              }
+            },
+            "Property": "Cód. Veículo Modelo Manutenção"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0ed7905e0067c5eb8cd3",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Ficha técnica (2)"
+                      }
+                    },
+                    "Property": "Valor Aprovado"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Ficha técnica (2)"
+                          }
+                        },
+                        "Property": "Valor Aprovado"
+                      }
+                    },
+                    "Function": 0
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
