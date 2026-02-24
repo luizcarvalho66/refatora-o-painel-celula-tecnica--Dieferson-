@@ -50,6 +50,17 @@
           "type": "BaseTheme"
         }
       ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "edenred_logo.png",
+          "path": "edenred_logo.png",
+          "type": "Image"
+        }
+      ]
     }
   ],
   "settings": {
